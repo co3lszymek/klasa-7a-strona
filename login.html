@@ -6,32 +6,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Zaloguj się jako admin</h1>
-  <form id="loginForm">
-    <input type="text" id="username" placeholder="Login" required />
-    <input type="password" id="password" placeholder="Hasło" required />
+  <h1>Panel logowania</h1>
+  <form id="login-form">
+    <input type="text" id="username" placeholder="Login" required>
+    <input type="password" id="password" placeholder="Hasło" required>
     <button type="submit">Zaloguj</button>
+    <p id="login-message" style="color: red;"></p>
   </form>
-  <script>
-    const backendUrl = 'https://klasa7a-api.onrender.com/'; // <- ZMIEŃ NA SWOJE
-    document.getElementById("loginForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const res = await fetch(`${backendUrl}/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: document.getElementById("username").value,
-          password: document.getElementById("password").value,
-        }),
-      });
-      const data = await res.json();
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-        location.href = "admin.html";
-      } else {
-        alert("Nieprawidłowe dane");
-      }
-    });
-  </script>
+  <script src="login.js"></script>
 </body>
 </html>
