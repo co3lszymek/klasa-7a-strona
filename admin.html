@@ -2,26 +2,25 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <title>Panel Admina</title>
+  <title>Panel admina</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main>
-    <h2>Dodaj wpis</h2>
+  <h1>Panel admina</h1>
+  <button onclick="logout()">Wyloguj</button>
+  <form id="postForm">
     <select id="category">
       <option value="lektury">Lektury</option>
       <option value="sprawdziany">Sprawdziany</option>
-      <option value="przygotowania">Przygotowania</option>
       <option value="notatki">Notatki</option>
-      <option value="plan">Plan</option>
+      <option value="plan">Plan lekcji</option>
     </select>
-    <input type="text" id="title" placeholder="Tytuł" />
-    <textarea id="contentText" placeholder="Treść wpisu"></textarea>
-    <button onclick="addPost()">Dodaj</button>
-
-    <h2>Usuń wpis</h2>
-    <ul id="postList"></ul>
-  </main>
+    <input type="text" id="title" placeholder="Tytuł" required />
+    <textarea id="text" placeholder="Treść" required></textarea>
+    <button type="submit">Dodaj wpis</button>
+  </form>
+  <h2>Twoje wpisy</h2>
+  <ul id="postList"></ul>
   <script src="script.js"></script>
 </body>
 </html>
