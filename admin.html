@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel Admina</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h2>Dodaj wpis</h2>
+    <select id="category">
+      <option value="lektury">Lektury</option>
+      <option value="sprawdziany">Sprawdziany</option>
+      <option value="przygotowania">Przygotowania</option>
+      <option value="notatki">Notatki</option>
+      <option value="plan">Plan</option>
+    </select>
+    <input type="text" id="title" placeholder="Tytuł" />
+    <textarea id="contentText" placeholder="Treść wpisu"></textarea>
+    <button onclick="addPost()">Dodaj</button>
+
+    <h2>Usuń wpis</h2>
+    <ul id="postList"></ul>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
